@@ -1,0 +1,24 @@
+<h1>Listing bots</h1>
+
+<p><%= link_to 'Home', root_path %></p>
+<p><%= link_to 'New Bot', new_bot_path %></p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Population</th>
+  </tr>
+
+  <% @bots.each do |bot| %>
+    <tr>
+      <td><%= bot.name %></td>
+      <td><%= bot.population %></td>
+      <td><%= link_to 'Show', bot_path(bot) %></td>
+      <td><%= link_to 'Edit', edit_bot_path(bot) %></td>
+      <td><%= link_to 'Populate', 'bots/populate/' + bot.id.to_s %></td>
+      <td><%= link_to 'Destroy', bot_path(bot),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

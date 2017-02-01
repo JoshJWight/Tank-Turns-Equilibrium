@@ -1,0 +1,14 @@
+<p>Winner: <%= @winner%></p>
+<p><a href = "play">Play again</a></p>
+<p><a onclick=toBottom()>Bottom of page</a></p>
+
+
+<code><%= @log %></code>
+
+<a href = "play" id="bottom">Play again</a>
+
+<script>
+function toBottom() {
+    document.querySelector("#bottom").scrollIntoView();
+}
+</script>
